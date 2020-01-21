@@ -1,7 +1,7 @@
 # RxActivityResult
 a Android RX ActivityResult Component
 
-make Android ActivityResult using more easily
+make Android ActivityResult callback more easily
 
 ### Setup:
 
