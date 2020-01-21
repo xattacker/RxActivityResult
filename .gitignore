@@ -39,6 +39,7 @@ debug/
 bin/
 .gradle/
 build/
+.DS_Store
 
 
 # Built application files
