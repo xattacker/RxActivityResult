@@ -1,7 +1,7 @@
-# RxContextMenu
-a Android RX ContextMenu Component
+# RxActivityResult
+a Android RX ActivityResult Component
 
-make Android ContextMenu using more easily
+make Android ActivityResult using more easily
 
 ### Setup:
 
@@ -16,26 +16,23 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.xattacker.android:RxContextMenu:1.0.0'
+    implementation 'com.xattacker.android:RxActivityResult:1.0.0'
 }
 ``` 
 
 ### How to use:
 ``` 
-	// register menu and subscribe click event
-        val rxContextMenu = RxContextMenu(this)
-        rxContextMenu.request(
-            MenuItemPack(0, 1, "aaaa"),
-            MenuItemPack(0, 3, "nnnnnn"),
-            MenuItemPack(0, 2, "cccccc"))
-            .subscribe {
-		item -> // menu item selected event triggered
-                android.util.Log.i("aaa", "selected item: " + item.title)
-            }
-
-	val view = findViewById<View>(R.id.button_1)
-        rxContextMenu.registerForContextMenu(view)
+	val intent = Intent(this, ResultActivity::class.java)
 	
-	// show menu
-	view.showContextMenu()
+        val rx = RxActivityResult(this)
+        rx.startActivityForResult(intent)
+            .subscribe {
+	    	result ->
+                android.util.Log.d("aaa", "result: " + result.resultCode)
+
+                if (result.resultCode == Activity.RESULT_OK && result.data != null)
+                {
+                    android.util.Log.d("aaa", "result intent: " + result.data!!.extras.getString("result"))
+                }
+            }
 ``` 
