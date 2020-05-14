@@ -5,7 +5,7 @@ make Android ActivityResult callback more easily
 
 ### Setup:
 
-minSdkVersion: 19
+minSdkVersion: 15
 
 ``` 
 allprojects {
@@ -16,7 +16,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.xattacker.android:RxActivityResult:1.0.0'
+    implementation 'com.xattacker.android:RxActivityResult:1.0.1'
 }
 ``` 
 
