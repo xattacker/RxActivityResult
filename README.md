@@ -6,7 +6,7 @@ make Android ActivityResult callback more easily
 
 ### Setup:
 
-minSdkVersion: 15
+minSdkVersion: 15 [ ![Download](https://api.bintray.com/packages/xattacker/maven/RxActivityResult/images/download.svg?version=1.0.1) ](https://bintray.com/xattacker/maven/RxActivityResult/1.0.1/link)
 
 ``` 
 allprojects {
