@@ -22,7 +22,7 @@ internal class RxActivityResultFragment : androidx.fragment.app.Fragment()
     {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode ==REQUEST_CODE)
+        if (requestCode == REQUEST_CODE)
         {
             publishSubject?.onNext(ActivityResultPack(resultCode, data))
         }
