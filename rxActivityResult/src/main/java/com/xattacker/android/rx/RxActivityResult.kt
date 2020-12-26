@@ -44,7 +44,8 @@ class RxActivityResult
             o ->
             request(o, intent)
                 // Transform Observable<ActivityResultPack> to ObservableSource<ActivityResultPack>
-                .buffer(1).flatMap(Function<List<ActivityResultPack>, ObservableSource<ActivityResultPack>> {
+                .buffer(1)
+                .flatMap(Function<List<ActivityResultPack>, ObservableSource<ActivityResultPack>> {
                      item: List<ActivityResultPack> ->
                      Observable.just(item[0])
                 })
