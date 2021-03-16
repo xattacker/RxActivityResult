@@ -68,24 +68,21 @@ class RxActivityResult
     {
         return object : Lazy<RxActivityResultFragment>
         {
-            private var fragment: RxActivityResultFragment? = null
-
+            private val fragment by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+                getFragment(fragmentManager)
+            }
+            
             @Synchronized
             override fun get(): RxActivityResultFragment
             {
-                if (fragment == null)
-                {
-                    fragment = getFragment(fragmentManager)
-                }
-
-                return fragment!!
+                return fragment
             }
         }
     }
 
     private fun getFragment(fragmentManager: androidx.fragment.app.FragmentManager): RxActivityResultFragment
     {
-        var fragment = findFragment(fragmentManager)
+        var fragment = fragmentManager.findFragmentByTag(TAG) as RxActivityResultFragment?
         if (fragment == null)
         {
             fragment = RxActivityResultFragment()
@@ -93,10 +90,5 @@ class RxActivityResult
         }
 
         return fragment
-    }
-
-    private fun findFragment(fragmentManager: androidx.fragment.app.FragmentManager): RxActivityResultFragment?
-    {
-        return fragmentManager.findFragmentByTag(TAG) as RxActivityResultFragment?
     }
 }

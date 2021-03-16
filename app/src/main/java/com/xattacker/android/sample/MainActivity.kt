@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity()
 
                 if (result.resultCode == Activity.RESULT_OK && result.data != null)
                 {
-                    android.util.Log.d("aaa", "result intent: " + result.data!!.extras.getString("result"))
+                    android.util.Log.d("aaa", "return intent result: " + result.data!!.extras.getString("result"))
                 }
         }
     }
