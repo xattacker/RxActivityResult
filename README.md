@@ -6,18 +6,19 @@ make Android ActivityResult callback more easily
 
 ### Setup:
 
-minSdkVersion: 15 [ ![Download](https://api.bintray.com/packages/xattacker/maven/RxActivityResult/images/download.svg?version=1.0.2) ](https://bintray.com/xattacker/maven/RxActivityResult/1.0.2/link)
+minSdkVersion: 19
 
 ``` 
 allprojects {
     repositories {
         ...
         jcenter()
+	maven { url 'https://jitpack.io' }
     }
 }
 
 dependencies {
-    implementation 'com.xattacker.android:RxActivityResult:1.0.2'
+    implementation 'com.github.xattacker:RxActivityResult:1.0.2'
 }
 ``` 
 
