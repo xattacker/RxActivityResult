@@ -6,7 +6,7 @@ make Android ActivityResult callback more easily
 
 ### Setup:
 
-minSdkVersion: 19
+minSdkVersion: 15
 
 ``` 
 allprojects {
