@@ -12,7 +12,7 @@ minSdkVersion: 15
 allprojects {
     repositories {
         ...
-        jcenter()
+        mavenCentral()
 	maven { url 'https://jitpack.io' }
     }
 }
