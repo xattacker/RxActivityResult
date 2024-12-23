@@ -3,7 +3,8 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdk 34
-
+    namespace 'com.xattacker.android.sample'
+    
     defaultConfig {
         applicationId "com.xattacker.android.sample"
         minSdkVersion 19
@@ -27,8 +28,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    namespace 'com.xattacker.android.sample'
 }
 
 dependencies {
